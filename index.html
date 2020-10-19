@@ -43,8 +43,30 @@
             </div>
         </div>
 
+<div class="shop-info-container">
+    <div class="input-search-container">
+    <input type="search" class="search-input" placeholder="Type something..."/>
+    <button class="search-btn">Search</button>
+    </div>
+    <div class="delivery-container">
+        <div class="delivery-text-container">
+            <h2>Free Delivery</h2>
+            <p2>Over $50 and others</p2>
+        </div>
+        <img src="images/delivery.png" class="delivery-img" alt="delivery-img">
+    </div>
 
-        <div style="width:100%; height:500vh;"></div>
+
+    <div class="shop-online-container">
+        <div class="shop-text-container">
+            <h3>Shop Online</h3>
+            <p3>get your shopping<br> in same day</p3>
+        </div>
+        <img src="images/stoper.png" class="stoper-img" alt="stoper">
+
+    </div>
+</div>
+   
 
 
         <script src="app.js" async defer></script>
@@ -53,7 +75,7 @@
 
       window.onload = function() 
       {
-        AOS.init();
+ AOS.init();
 
 // You can also pass an optional settings object
 // below listed default settings
@@ -70,7 +92,7 @@ AOS.init({
   
 
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120, // offset (in px) from the original trigger point
+  offset: 30, // offset (in px) from the original trigger point
   delay: 200, // values from 0 to 3000, with step 50ms
   duration: 400, // values from 0 to 3000, with step 50ms
   easing: 'ease', // default easing for AOS animations
