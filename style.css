@@ -378,30 +378,116 @@ p4
     letter-spacing: 1px;
     margin-right:70px;
     margin-bottom:50px;
+    background:transparent;
+    border-radius:15px;
+    padding: 3px 8px;
+    transition:0.4s;
+}
 
+p4:hover{
+    background:rgb(223, 201, 8);
+    color:white;
+    transition:0.4s;
+    cursor: pointer;
+}
+
+.categoryClicked 
+{
+        background:rgb(223, 201, 8);
+        color:white;
+        transition:0.4s;
+        cursor: pointer;
 }
 
 .products-container
 {
     width:100%;
     height:fit-content;
-    border:1px solid red;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items:center;
-    justify-content:flex-start;
+    justify-content:center;
     padding:10px 10px;
+    overflow-y: scroll;
 }
 
 .product 
 {
-    width:250px;
-    height:250px;
+    width:230px;
+    height:230px;
     -webkit-box-shadow: 0px 16px 17px 0px rgba(50, 50, 50, 0.28);
     -moz-box-shadow:    0px 16px 17px 0px rgba(50, 50, 50, 0.28);
     box-shadow:         0px 16px 17px 0px rgba(50, 50, 50, 0.28);
     border-radius:15px;
     margin:25px 25px;
+    display:flex;
+    position:relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
+
+}
+
+.product-name 
+{
+    font-family: 'Poppins', sans-serif;
+    font-size:23px;
+    color:rgb(107, 104, 104);
+    letter-spacing: 1px;
+    position:absolute;
+    top:50px;
+    left:20px;
+}
+
+.product-info 
+{
+    width:fit-content;
+    height:fit-content;
+    position:absolute;
+    right:20px;
+    top:32px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.how-sell 
+{
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+    color:rgb(107, 104, 104);
+    letter-spacing: 1px;
+    line-height: 18px;
+    opacity:0.7;
+}
+
+.discount 
+{
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+    color:rgb(107, 104, 104);
+    letter-spacing: 1px;
+    text-decoration: line-through;
+    opacity:0.7;
+    line-height: 20px;
+}
+
+.price 
+{
+    font-family: 'Poppins', sans-serif;
+    font-size:22px;
+    color:rgb(107, 104, 104);
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+.product-photo 
+{
+    position:absolute;
+    width:170px;
+    height:170px;
+    bottom:0px;
 }

@@ -5,6 +5,19 @@ let firstSpan = document.querySelector(".first");
 let secondSpan = document.querySelector(".second");
 let thirdSpan = document.querySelector(".third");
 let mobileMenu = document.querySelector(".menu");
+
+
+let products = [...document.querySelectorAll(".product")];
+
+let allCategory = document.querySelector(".all-category");
+let cosmeticsCategory = document.querySelector(".cosmetics-category");
+let foodCategory = document.querySelector(".food-category");
+let dairyCategory = document.querySelector(".dairy-category");
+let houseCategory = document.querySelector(".house-category");
+let petCategory = document.querySelector(".pet-category");
+let cleaningCategory = document.querySelector(".cleaning-category");
+
+let categories = [allCategory, cosmeticsCategory, foodCategory, dairyCategory, houseCategory, petCategory, cleaningCategory];
 //////////////////////////////////////////////////// HOVER ON LINK EFFECT FUNCTION //////////////////////////////////////////////
 
 
@@ -36,9 +49,105 @@ let menuClicked = function()
 }
 
 
+let sortByCategory = function(cat) 
+{
+    
+    for(let i=0; i<products.length; i++)
+    {
+        let category = products[i].getAttribute("data-category");
+        if(category != cat)
+        {
+            products[i].style.display="none";
+        }
+        else 
+        {
+            products[i].style.display="flex";
+        }
+    }
+
+}
 
 
+    allCategory.addEventListener("click",function()
+    {
+    for(let i=0; i<products.length; i++)
+    {
+            products[i].style.display="flex";
 
+    }
+    for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+    allCategory.classList.add("categoryClicked");
+    });
+
+    cosmeticsCategory.addEventListener("click",function()
+    {
+        sortByCategory("cosmetics");
+        for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+        cosmeticsCategory.classList.add("categoryClicked");
+    });
+
+    foodCategory.addEventListener("click",function()
+    {
+        sortByCategory("food");
+        for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+        foodCategory.classList.add("categoryClicked");
+    });
+
+    dairyCategory.addEventListener("click",function()
+    {
+        sortByCategory("dairy");
+        for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+        dairyCategory.classList.add("categoryClicked");
+    });
+
+    houseCategory.addEventListener("click",function()
+    {
+        sortByCategory("house");
+        for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+        houseCategory.classList.add("categoryClicked");
+    });
+
+    petCategory.addEventListener("click",function()
+    {
+        sortByCategory("pet");
+        for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+        petCategory.classList.add("categoryClicked");
+    });
+
+    cleaningCategory.addEventListener("click",function()
+    {
+        sortByCategory("cleaning");
+        for(let i=0; i<categories.length; i++)
+    {
+            categories[i].classList.remove("categoryClicked");
+
+    }
+        cleaningCategory.classList.add("categoryClicked");
+    });
 
     hoverOnLinkEffect();
     menuBtn.addEventListener("click", menuClicked);
