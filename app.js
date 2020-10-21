@@ -18,6 +18,9 @@ let petCategory = document.querySelector(".pet-category");
 let cleaningCategory = document.querySelector(".cleaning-category");
 
 let categories = [allCategory, cosmeticsCategory, foodCategory, dairyCategory, houseCategory, petCategory, cleaningCategory];
+
+let searchBtn = document.querySelector(".search-btn");
+
 //////////////////////////////////////////////////// HOVER ON LINK EFFECT FUNCTION //////////////////////////////////////////////
 
 
@@ -67,7 +70,26 @@ let sortByCategory = function(cat)
 
 }
 
+let search = function()
+{
+    let search_text = document.querySelector(".search-input").value;
 
+    let products_names = [...document.querySelectorAll(".product-name")];
+
+    for(let i=0; i<products_names.length; i++)
+    {
+        let prodname = products_names[i].textContent;
+        if(search_text == prodname)
+        {
+            products[i].style.display="flex";
+        }
+        else{
+            products[i].style.display="none";
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
     allCategory.addEventListener("click",function()
     {
     for(let i=0; i<products.length; i++)
@@ -149,7 +171,10 @@ let sortByCategory = function(cat)
         cleaningCategory.classList.add("categoryClicked");
     });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     hoverOnLinkEffect();
     menuBtn.addEventListener("click", menuClicked);
-
+    searchBtn.addEventListener("click", search);
+   
 
